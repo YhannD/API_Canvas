@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet"
+          href="https://maxst.icons8.com/vue-static/landings/line-awesome/font-awesome-line-awesome/css/all.min.css">
+    <link rel="stylesheet"
+          href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
+    <script type="module" src="js/index.js"></script>
+
+    <title>Test Api Canva</title>
+
+</head>
+<body>
+<section id="dessin">
+    <canvas id="feuille" width="600" height="600"></canvas>
+    <div id="toolbar">
+        <label for="stroke">Color Picker</label>
+        <input id="stroke" name='stroke' type="color" class="color-light">
+    </div>
+    <div id="palette" class="color-light">
+        <div data-color="black" class="active"></div>
+        <div data-color="red"></div>
+        <div data-color="orange"></div>
+        <div data-color="yellow"></div>
+        <div data-color="green"></div>
+        <div data-color="blue"></div>
+        <div data-color="purple"></div>
+    </div>
+
+    <div id="outils" class="tools-light">
+        <div id="normal" class="active">T1</div>
+        <div id="medium" class="">T2</div>
+        <div id="large" class="">T3</div>
+        <div id="plus" class="las la-plus"></div>
+        <div id="moins" class="las la-minus"></div>
+        <div id="gomme" class="las la-eraser"></div>
+        <div id="croix" class="las la-times"></div>
+    </div>
+</section>
+
+<!-- Trigger/Open The Modal -->
+<button id="myBtn">Envoyer mon oeuvre d'art</button>
+
+<!-- The Modal -->
+<div id="myModal" class="modal">
+
+    <!-- Modal content -->
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <form method="POST"  id="formSendCard" action="send_mail.php">
+            <fieldset>
+                <legend>Envoyer sa magnifique carte virtuelle</legend>
+                <div>
+                    <label for="fromEmail">Votre email</label>
+                    <input type="text" id="fromEmail" name="fromEmail">
+                </div>
+                <div>
+                    <label for="toEmail">L'email du destinataire</label>
+                    <input type="text" id="toEmail" name="toEmail">
+                </div>
+                <div>
+                    <label for="subject">Qui êtes vous?</label>
+                    <input type="text" id="subject" name="subject">
+                </div>
+                <div>
+                    <label for="bodyMail">Contenu du mail</label>
+                    <textarea id="bodyMail" name="bodyMail"></textarea>
+                </div>
+                <div>
+                    <label for="copieMail">Recevoir une copie de la carte</label>
+                    <input type="checkbox" name="copieMail" id="copieMail">
+                </div>
+                <input type="submit" value="Envoi">
+            </fieldset>
+        </form>
+    </div>
+
+</div>
+
+
+</body>
+</html>
